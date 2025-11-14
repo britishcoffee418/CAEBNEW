@@ -1,0 +1,267 @@
+:root {
+  --verde-oscuro: #064420;
+  --blanco: #ffffff;
+  --amarillo: #f4d03f;
+  --sombra-negra: rgba(0, 0, 0, 0.6);
+}
+
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--blanco);
+}
+
+header {
+  position: relative;
+  background-color: var(--verde-oscuro);
+  color: var(--amarillo);
+  padding: 40px;
+  overflow: hidden;
+}
+
+/* Banner arriba a la derecha */
+.banner {
+  position: absolute;
+  top: 35px;
+  right: 40px;
+  width: 160px;
+  height: auto;
+}
+
+.Logo {
+  position: absolute;
+  top: 12px;
+  left: 40px;
+  width: 95px;
+  height: auto;
+  border-radius: 40px;
+}
+
+/* Contenedor del texto centrado */
+.contenedor-texto-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px; /* igual o mayor al alto del banner */
+}
+
+.texto-box {
+  text-align: center;
+}
+
+.texto-box h1 {
+  margin: 0;
+  font-size: 36px;
+  text-shadow: 8px 8px 12px var(--sombra-negra);
+}
+
+
+/*  Navegación */
+nav {
+  background-color: var(--amarillo);
+  padding: 30px;
+  text-align: center;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--verde-oscuro);
+  font-weight: bold;
+  font-size: 18px;
+  background-color: var(--blanco);
+  padding: 20px 30px;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px var(--sombra-negra);
+  box-shadow: 2px 2px 6px var(--sombra-negra);
+}
+
+nav ul li a.active {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  box-shadow: 0 0 10px #f0c0d0;
+}
+
+/*  Eventos */
+.evento {
+  background-color: var(--blanco);
+  padding: 40px;
+  margin: 30px auto;
+  border-radius: 30px;
+  box-shadow: 0 0 20px var(--verde-oscuro);
+  max-width: 1000px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.evento h2 {
+  color: var(--verde-oscuro);
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.evento p {
+  font-style: italic;
+  color: var(--verde-oscuro);
+  margin-bottom: 20px;
+}
+
+/*  Galería de imágenes */
+.galeria-evento {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.galeria-evento img {
+  width: 30%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 10px var(--verde-oscuro);
+  transition: transform 0.3s ease;
+}
+
+.galeria-evento img:hover {
+  transform: scale(1.05);
+}
+
+/*  Pie de página */
+footer {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  text-align: center;
+  padding: 30px;
+  font-size: 20px;
+  text-shadow: 8px 8px 12px var(--sombra-negra); /* Sombra negra al texto del encabezado */
+}
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a:hover {
+  color: var(--blanco);
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a,
+.footer-links span {
+  color: var(--blanco);
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--amarillo);
+}
+
+/*  Animación */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*  Responsive */
+@media (max-width: 768px) {
+  .galeria-evento img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/*  Responsive */
+@media (max-width: 768px) {
+  /*  Header en móvil */
+  header {
+    display: flex;
+    flex-direction: column;   /* Se apilan */
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+  }
+
+ .Logo {
+    position: static;
+    margin-bottom: 15px;
+  }
+
+  .contenedor-texto-banner {
+    order: 2;                 /* Texto en el centro */
+    margin: 15px 0;
+  }
+
+  .banner {
+    position: static;         /* Quitar absolute */
+    width: 180px;             /* Más pequeño en móvil */
+    height: auto;
+    order: 3;                 /* Banner debajo del texto */
+    margin-bottom: 10px;
+  }
+
+  /* Menú de navegación */
+  nav ul {
+    display: flex;
+    flex-direction: row;      /* Siempre horizontal */
+    justify-content: center;
+    gap: 5px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: nowrap;        /* No saltan de línea */
+  }
+
+  nav ul li {
+    display: inline-block;
+    margin: 0;
+  }
+
+  nav ul li a {
+    font-size: 18px;          /*  Tamaño fijo */
+    padding: 8px 12px;        /* Ajuste de padding */
+    border-radius: 20px;
+  }
+
+  /*  Galería de eventos */
+  .galeria-evento img {
+    width: 100%;
+    height: auto;
+  }
+
+  /*  Footer EXACTO como pediste */
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .footer-links a {
+    margin: 1px;
+    font-size: 16px;
+  }
+}

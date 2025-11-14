@@ -1,0 +1,293 @@
+:root {
+  --verde-oscuro: #064420;
+  --blanco: #ffffff;
+  --amarillo: #f4d03f;
+  --sombra-negra: rgba(0, 0, 0, 0.6); /* Sombra negra para texto y elementos */
+}
+
+/*  Estilos generales del cuerpo del sitio */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  position: relative;
+  background-color: var(--verde-oscuro);
+  color: var(--amarillo);
+  padding: 40px;
+  overflow: hidden;
+}
+
+/* Banner arriba a la derecha */
+.banner {
+  position: absolute;
+  top: 35px;
+  right: 40px;
+  width: 160px;
+  height: auto;
+}
+
+.Logo {
+  position: absolute;
+  top: 12px;
+  left: 40px;
+  width: 95px;
+  height: auto;
+  border-radius: 40px;
+}
+
+/* Contenedor del texto centrado */
+.contenedor-texto-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px; /* igual o mayor al alto del banner */
+}
+
+.texto-box {
+  text-align: center;
+}
+
+.texto-box h1 {
+  margin: 0;
+  font-size: 36px;
+  text-shadow: 8px 8px 12px var(--sombra-negra);
+}
+
+
+/*  Barra de navegación principal */
+nav {
+  background-color: var(--amarillo);
+  padding: 30px;
+  text-align: center;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 20px;
+}
+
+/*  Estilos para los enlaces del menú */
+nav ul li a {
+  text-decoration: none;
+  color: var(--verde-oscuro);
+  font-weight: bold;
+  font-size: 18px;
+  background-color: var(--blanco);
+  padding: 20px 30px;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px var(--sombra-negra); /* Sombra al texto del botón */
+  box-shadow: 2px 2px 6px var(--sombra-negra);  /* Sombra al botón */
+}
+
+/*  Estilo para el botón activo (página actual) */
+nav ul li a.active {
+  background-color: var(--verde-oscuro); /* Fondo verde oscuro */
+  color: var(--blanco); /* Texto blanco */
+      box-shadow: 0 0 10px #f0c0d0;
+}
+
+/*  Galería de profesores con 3 columnas por fila */
+.galeria-profesores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 60px;
+  background-color: var(--blanco);
+}
+
+/*  Tarjeta individual */
+.profesor {
+  width: calc(25.333% - 40px); /* 3 columnas con espacio entre ellas */
+  background-color: var(--blanco);
+  color: black;
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 0 20px var(--verde-oscuro); /* Sombra verde institucional */
+  transition: transform 0.3s ease;
+}
+
+.profesor:hover {
+  transform: translateY(-10px);
+}
+
+/*  Contenedor de imagen con sombra verde institucional */
+.imagen-contenedor {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 15px var(--verde-oscuro);
+  margin-bottom: 15px;
+}
+
+.imagen-contenedor img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Texto dentro de la tarjeta */
+.profesor h3 {
+  margin: 10px 0 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.profesor p {
+  margin: 0;
+  font-style: italic;
+  color: var(--verde-oscuro);
+}
+
+
+/*  Pie de página */
+footer {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  text-align: center;
+  padding: 30px;
+  font-size: 20px;
+  text-shadow: 8px 8px 12px var(--sombra-negra); /* Sombra negra al texto del encabezado */
+}
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a:hover {
+  color: var(--blanco);
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a,
+.footer-links span {
+  color: var(--blanco);
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--amarillo);
+}
+
+@media (max-width: 900px) {
+  .profesor {
+    width: calc(50% - 40px); /* 2 columnas en pantallas medianas */
+  }
+}
+
+@media (max-width: 600px) {
+  .profesor {
+    width: 100%; /* 1 columna en pantallas pequeñas */
+  }
+}
+
+.profesor {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*  Efecto de movimiento al pasar el cursor */
+img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+/* =========================
+    ESTILOS RESPONSIVE waoz
+   ========================= */
+@media (max-width: 900px) {
+  .profesor {
+    width: calc(50% - 40px); /* 2 columnas en pantallas medianas */
+  }
+}
+
+@media (max-width: 600px) {
+  /* Header apilado en móvil */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+  }
+
+  .Logo {
+    position: static;
+    margin-bottom: 15px;
+  }
+
+  .contenedor-texto-banner {
+    order: 2;
+    margin: 15px 0;
+  }
+
+  .banner {
+    position: static;
+    width: 180px;
+    height: auto;
+    order: 3;
+    margin-bottom: 10px;
+  }
+
+  /* Nav: botones siempre en una fila, tamaño 18 */
+  nav ul {
+    display: flex;
+    flex-direction: row;   /* Horizontal */
+    justify-content: center;
+    gap: 5px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: nowrap;     /* No saltan de línea */
+  }
+
+  nav ul li {
+    display: inline-block;
+    margin: 0;
+  }
+
+  nav ul li a {
+    font-size: 18px;       /* Tamaño solicitado */
+    padding: 8px 12px;     /* Ajuste de padding para que quepan */
+    border-radius: 20px;
+  }
+
+  /* Galería: 1 columna en móvil */
+  .profesor {
+    width: 100%;
+  }
+
+  /* Footer EXACTO como pediste */
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .footer-links a {
+    margin: 1px;
+    font-size: 16px;
+  }
+}
